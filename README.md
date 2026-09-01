@@ -1,8 +1,10 @@
 # Robô Contrato FocoMEI → Onety
 
-Serviço Python que recebe POST do backend FocoMEI após pagamento Stripe e gera contrato no Onety/Autentique.
+Serviço Python que recebe POST do backend FocoMEI e gera contrato no Onety/Autentique. Também prepara leads no CRM Onety (funil → Proposta).
 
 Repositório **independente** do monorepo `Prodenxo/focomei` — deploy no EasyPanel a partir da raiz deste repo.
+
+**Documentação completa:** [`docs/onety-crm-contrato-api.md`](docs/onety-crm-contrato-api.md) (API Onety, funis, payloads, env).
 
 ## Deploy no EasyPanel
 
@@ -38,10 +40,23 @@ No app backend no EasyPanel:
 |---|---|
 | `ONETY_CONTRATO_WEBHOOK_URL` | `http://robo-contrato:8787/webhook/contrato` |
 | `ONETY_CONTRATO_WEBHOOK_SECRET` | **mesmo** `WEBHOOK_SECRET` do robô |
+| `ONETY_CRM_WEBHOOK_URL` | (opcional) `http://robo-contrato:8787/webhook/crm/preparar-proposta` |
 
 `robo-contrato` = nome do serviço no EasyPanel (rede interna Docker). Se renomear o serviço, ajuste a URL.
 
 Redeploy **nos dois** apps após mudar env.
+
+## Rotas HTTP
+
+| Método | Rota | Descrição |
+|--------|------|-----------|
+| GET | `/health` | Health check |
+| POST | `/webhook/contrato` | Gera contrato Autentique |
+| POST | `/webhook/crm/preparar-proposta` | Cria lead + move para Proposta |
+| POST | `/webhook/contrato-status` | Status de assinatura |
+| POST | `/webhook/contrato-link` | Link de assinatura (por contrato ou lead) |
+
+Todas as rotas POST exigem `Authorization: Bearer <WEBHOOK_SECRET>` quando `WEBHOOK_SECRET` está definido.
 
 ## Testar
 
@@ -59,7 +74,9 @@ curl -X POST http://robo-contrato:8787/webhook/contrato \
 ## Fluxo
 
 ```
-Cliente paga Stripe → Backend FocoMEI → POST /webhook/contrato → Onety
+Cliente paga / confirma plano → Backend FocoMEI → POST /webhook/crm/preparar-proposta (opcional)
+                                              → POST /webhook/contrato → Onety/Autentique
+App aguardando contrato → POST /webhook/contrato-status ou /webhook/contrato-link
 ```
 
 ## Modo manual (local)
@@ -79,5 +96,6 @@ python webhook_server.py
 | `gerar_contrato.py` | Geração no Onety |
 | `padrao_lote.py` | Expande JSON mínimo do FocoMEI |
 | `entrada/_padrao_focomei.json` | Template (não apagar) |
+| `docs/onety-crm-contrato-api.md` | API Onety + funis + integração FocoMEI |
 
 Saídas: pasta `saida/` (não versionada).
