@@ -1,0 +1,23 @@
+{
+  "contratos": [
+    {
+      "tipo_cliente": "empresa",
+      "razao_social": "TESTE LEO CONTRATO ME",
+      "cpf_cnpj": "11111111111111",
+      "email": "testecontrato@teste.com",
+      "telefone": "5521980558988",
+      "endereco": "Nuno de Andrade",
+      "numero": "26",
+      "bairro": "Irajá",
+      "cidade": "Rio de Janeiro",
+      "estado": "RJ",
+      "cep": "21235430",
+      "signatario_nome": "Teste Leo Ultimo",
+      "signatario_cpf": "12345678910",
+      "signatario_email": "testecontrato@teste.com",
+      "signatario_telefone": "5521980558988",
+      "quantidade_licencas": "5",
+      "valor_mensal": 100
+    }
+  ]
+}

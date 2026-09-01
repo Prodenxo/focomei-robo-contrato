@@ -1,0 +1,104 @@
+{
+  "_comentario": "NÃO APAGUE. Padrão FOCO MEI (empresa 785) aplicado em TODO contrato. GPT só manda os clientes.",
+
+  "empresa_onety_id": 785,
+  "empresa_onety_nome": "FOCO MEI",
+
+  "modo": "html",
+  "template_id": 254,
+  "template_nome": "LICENÇA FOCOMEI",
+
+  "criar_cliente": true,
+  "expires_dias": 2,
+  "meses_vigencia": 12,
+
+  "valor_mensal": 100.0,
+  "parcelas": 12,
+  "valor_total": 1200.0,
+
+  "produto": {
+    "id": 587,
+    "nome": "Start",
+    "descricao": "Pacote Start — até 5 CNPJs MEI",
+    "tipo": "mensal"
+  },
+  "produtos_dados": [
+    {
+      "id": 587,
+      "nome": "Start",
+      "descricao": "Pacote Start — até 5 CNPJs MEI",
+      "tipo": "mensal",
+      "quantidade": 1,
+      "valor_de_venda": 100.0,
+      "valor_total": 1200.0,
+      "parcelas": 12
+    }
+  ],
+
+  "custom": {
+    "plano_contratado": "Start",
+    "quantidade_de_cnpjs": "5",
+    "meses_promocionais": "0",
+    "mensalidade": "100,00"
+  },
+  "plano_contratado": "Start",
+  "meses_promocionais": "0",
+  "quantidade_licencas_padrao": "5",
+
+  "financeiro": {
+    "categoria_id": 12561,
+    "sub_categoria_id": 86447,
+    "conta_api_id": 669,
+    "_nota": "Foco MEI app - assinatura / Banco Inter"
+  },
+
+  "empresa_contratada": {
+    "id": 310,
+    "nome": "JM Connect Solucoes Digitais",
+    "razao_social": "JM CONNECT SOLUCOES DIGITAIS LTDA",
+    "cnpj": "67.577.728/0001-51",
+    "endereco": "Avenida Oliveira Belo",
+    "numero": "441",
+    "bairro": "Vila da Penha",
+    "cidade": "Rio de Janeiro",
+    "estado": "RJ",
+    "cep": "21221-300",
+    "telefone": "998771692",
+    "empresa_id": 785,
+    "ativo": 1
+  },
+
+  "contratada": {
+    "name": "Jhonata Matias Mata Campos",
+    "email": "jhonata.matias@contabhub.com.br",
+    "cpf": "110.657.647-07",
+    "telefone": "22998771692",
+    "funcao_assinatura": "Assinar como contratada"
+  },
+
+  "signatario_funcao_padrao": "Assinar como contratante",
+
+  "variaveis_do_template": [
+    "client.name",
+    "client.cpf_cnpj",
+    "client.endereco",
+    "client.numero",
+    "client.bairro",
+    "client.cidade",
+    "client.estado",
+    "company.razao_socialList",
+    "company.cnpjList",
+    "company.enderecoList",
+    "company.numeroList",
+    "company.bairroList",
+    "company.cidadeList",
+    "company.estadoList",
+    "company.cepList",
+    "contract.created_at",
+    "contract.mrr",
+    "custom.plano_contratado",
+    "custom.quantidade_de_cnpjs",
+    "custom.meses_promocionais",
+    "custom.mensalidade"
+  ]
+}

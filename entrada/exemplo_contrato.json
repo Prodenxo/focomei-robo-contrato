@@ -1,0 +1,55 @@
+{
+  "_comentario": "1) python gerar_contrato.py --listar-modelos  e  --listar-clientes  2) preencha os ids  3) salve como contrato.json  4) python gerar_contrato.py --arquivo entrada/contrato.json",
+  "nome": "Contrato_Exemplo",
+  "modo": "html",
+  "template_id": 11,
+  "client_id": 123,
+  "client_extra_id": null,
+  "expires_at": "2026-12-31",
+  "start_at": "2026-07-23",
+  "end_at": "2027-07-23",
+  "valor": 1500.0,
+  "valor_recorrente": 1500.0,
+  "signatories": [
+    {
+      "name": "Maria Silva",
+      "email": "maria@cliente.com",
+      "cpf": "000.000.000-00",
+      "telefone": "11999999999",
+      "funcao_assinatura": "Sócia",
+      "birth_date": "1990-01-15"
+    }
+  ],
+  "produtos_dados": [
+    {
+      "id": 1,
+      "nome": "Honorários Contábeis",
+      "descricao": "Mensalidade",
+      "tipo": "mensal",
+      "quantidade": 1,
+      "valor_de_venda": 1500.0,
+      "valor_total": 1500.0,
+      "parcelas": 1
+    }
+  ],
+  "cliente": {
+    "nome": "Empresa Cliente LTDA",
+    "cnpj": "00.000.000/0001-00",
+    "email": "contato@cliente.com",
+    "telefone": "1133334444",
+    "endereco": "Rua Exemplo, 100",
+    "cidade": "São Paulo",
+    "uf": "SP",
+    "cep": "01000-000"
+  },
+  "empresa": {
+    "nome": "Contabhub",
+    "cnpj": "11.111.111/0001-11",
+    "email": "contato@contabhub.com.br",
+    "telefone": "1144445555"
+  },
+  "variaveis_extras": {
+    "contract.dia_vencimento": "10",
+    "contract.data_primeiro_vencimento": "10/08/2026"
+  }
+}
